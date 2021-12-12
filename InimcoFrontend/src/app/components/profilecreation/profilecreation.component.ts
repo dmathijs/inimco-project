@@ -32,6 +32,7 @@ export class ProfileCreationComponent implements OnInit {
         this.supportedSocialMediaChannels = data;
 
         if(data.length)
+          this.errors = null;
           this.loading = false;
       });
   }
@@ -47,7 +48,7 @@ export class ProfileCreationComponent implements OnInit {
       
       return of(null);}))
     .subscribe(data => { 
-      if(data != null) this.errors = [];
+      if(data != null) this.errors = null;
       this.activeProfile = data;
     });
   }

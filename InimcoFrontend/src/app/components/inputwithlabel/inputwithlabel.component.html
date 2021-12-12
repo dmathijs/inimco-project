@@ -1,0 +1,27 @@
+<ng-container [formGroup]="formGroupValue">
+  <ng-container
+    *ngIf="formArrayNameValue; else unwrapped"
+    [formArrayName]="formArrayNameValue"
+  >
+    <ng-container [formGroupName]="formGroupName">
+      <div class="c-input-with-label">
+        <label class="c-input-with-label__label">{{ item.value.label }}</label>
+        <input
+          class="c-input-with-label__input"
+          type="text"
+          [formControlName]="formControlNameValue"
+        />
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-template #unwrapped>
+    <div class="c-input-with-label">
+      <label class="c-input-with-label__label">{{ label }}</label>
+      <input
+        class="c-input-with-label__input"
+        type="text"
+        [formControlName]="formControlNameValue"
+      />
+    </div>
+  </ng-template>
+</ng-container>

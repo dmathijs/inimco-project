@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+InimcoBackend/InimcoBackend/obj/
+InimcoBackend/InimcoBackend/bin/
+InimcoBackend/InimcoBackend/data.json
+InimcoBackend/.vs/
+
+InimcoFrontend/.angular/

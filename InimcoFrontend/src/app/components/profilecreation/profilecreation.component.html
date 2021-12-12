@@ -1,0 +1,55 @@
+<div class="c-profile-creation">
+  <div class="c-profile-creation__errors" *ngIf="errors">
+    Something went wrong:
+    <ul *ngFor="let error of errors">
+      <li>{{ error }}</li>
+    </ul>
+  </div>
+  <ng-container *ngIf="loading; else form">
+    <img
+      src="/assets/loader.svg"
+      alt="loading"
+      class="c-profile-creation__loader"
+    />
+  </ng-container>
+  <ng-template #form>
+    <h1 class="c-profile-creation__title">
+      Registration<span class="c-profile-creation__blue">.</span>
+    </h1>
+    <app-profilecreationform
+      [supportedSocialMediaChannels]="supportedSocialMediaChannels"
+      (onSubmitAccount)="addProfile($event)"
+    ></app-profilecreationform>
+    <div *ngIf="activeProfile" class="c-profile-creation__response">
+      <h2>Derived fields</h2>
+      <table>
+        <tr>
+          <td class="c-profile-creation__response-table-cell">
+            The number of VOWELS
+          </td>
+          <td>{{ activeProfile.numberOfVowelsInFirstAndLastName }}</td>
+        </tr>
+        <tr>
+          <td class="c-profile-creation__response-table-cell">
+            The number of CONSTENANTS
+          </td>
+          <td>{{ activeProfile.numberOfConsonantsInFirstAndLastName }}</td>
+        </tr>
+        <tr>
+          <td class="c-profile-creation__response-table-cell">
+            The firstname + last name entered
+          </td>
+          <td>{{ activeProfile.name }}</td>
+        </tr>
+        <tr>
+          <td class="c-profile-creation__response-table-cell">
+            The reverse version
+          </td>
+          <td>{{ activeProfile.reversedName }}</td>
+        </tr>
+      </table>
+      <h2>Original Object</h2>
+      <pre>{{ activeProfile.originalProfile | json }}</pre>
+    </div>
+  </ng-template>
+</div>

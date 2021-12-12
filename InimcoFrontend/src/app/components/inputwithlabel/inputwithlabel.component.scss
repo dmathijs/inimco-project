@@ -1,0 +1,18 @@
+.c-input-with-label {
+  display: flex;
+  padding-top: 10px;
+  box-sizing: border-box;
+  align-items: center;
+
+  &__label {
+    width: 150px;
+  }
+
+  &__input {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+  }
+}

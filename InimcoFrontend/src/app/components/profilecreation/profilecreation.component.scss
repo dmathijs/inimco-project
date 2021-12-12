@@ -1,0 +1,39 @@
+.c-profile-creation {
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
+  padding: 40px;
+  box-sizing: border-box;
+
+  .c-profile-creation__title {
+    text-align: center;
+    color: #444;
+    padding-bottom: 10px;
+  }
+
+  .c-profile-creation__loader {
+    height: 50px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .c-profile-creation__blue {
+    color: #14c1d9;
+  }
+
+  .c-profile-creation__errors {
+    background-color: #ea4335;
+    color: white;
+    padding: 10px;
+  }
+
+  .c-profile-creation__response {
+    margin-top: 30px;
+    border-top: solid 1px #ccc;
+  }
+
+  .c-profile-creation__response-table-cell {
+    padding-right: 10px;
+  }
+}

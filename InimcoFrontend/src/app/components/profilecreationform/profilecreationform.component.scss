@@ -1,0 +1,35 @@
+.c-profile-creation-form {
+  width: 100%;
+
+  .c-profile-creation-form__input {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+  }
+  .c-profile-creation-form__sub-title {
+    text-align: left;
+    color: #444;
+  }
+  .c-profile-creation-form__form-group {
+    display: flex;
+    padding-top: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+    &-label {
+      width: 150px;
+    }
+
+    &-input {
+      padding: 10px;
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: 5px;
+      border: solid 1px #ccc;
+    }
+  }
+}

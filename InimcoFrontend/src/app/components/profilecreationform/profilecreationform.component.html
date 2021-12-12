@@ -1,0 +1,51 @@
+<form
+  class="c-profile-creation-form"
+  (ngSubmit)="onSubmit()"
+  [formGroup]="profileForm"
+>
+  <app-inputwithlabel
+    [label]="'First Name'"
+    [formControlNameValue]="'firstName'"
+    [formGroupValue]="profileForm"
+  ></app-inputwithlabel>
+  <app-inputwithlabel
+    [label]="'Last Name'"
+    [formControlNameValue]="'lastName'"
+    [formGroupValue]="profileForm"
+  ></app-inputwithlabel>
+  <h2 class="c-profile-creation-form__sub-title">Social skills</h2>
+  <app-button
+    (onClick)="addSocialSkill()"
+    [label]="'+ Add social skill'"
+    [type]="'button'"
+  ></app-button>
+  <ng-container formArrayName="socialSkills">
+    <ng-container
+      *ngFor="let socialSkillInput of socialSkills.controls; let i = index"
+    >
+      <div class="c-profile-creation-form__form-group">
+        <input class="c-profile-creation-form__input" [formControlName]="i" />
+        <app-button
+          (onClick)="deleteSocialSkill(i)"
+          [label]="'Delete'"
+          [type]="'button'"
+        ></app-button>
+      </div>
+    </ng-container>
+  </ng-container>
+  <h2 class="c-profile-creation-form__sub-title">Social profiles</h2>
+  <ng-container formArrayName="socialAccounts">
+    <ng-container
+      *ngFor="let socialAccountInput of socialAccounts.controls; let i = index"
+    >
+      <app-inputwithlabel
+        [formGroupValue]="profileForm"
+        [formGroupName]="i"
+        [item]="socialAccountInput"
+        [formControlNameValue]="'address'"
+        [formArrayNameValue]="'socialAccounts'"
+      ></app-inputwithlabel>
+    </ng-container>
+  </ng-container>
+  <app-button [label]="'Submit'" [marginTop]="'20px'"></app-button>
+</form>

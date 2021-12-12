@@ -31,8 +31,7 @@ export class ProfileCreationComponent implements OnInit {
       .subscribe(data => { 
         this.supportedSocialMediaChannels = data;
 
-        if(data.length > 0)
-          this.errors = null;
+        if(this.errors == null)
           this.loading = false;
       });
   }

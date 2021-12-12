@@ -47,6 +47,7 @@ export class ProfileCreationComponent implements OnInit {
       
       return of(null);}))
     .subscribe(data => { 
+      if(data != null) this.errors = [];
       this.activeProfile = data;
     });
   }
